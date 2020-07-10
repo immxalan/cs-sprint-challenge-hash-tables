@@ -3,8 +3,16 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    result = dict()
 
-    return result
+    for array in arrays:
+        for number in array:
+            if number in result:
+                result[number] += 1
+            else:
+                result[number] = 1
+
+    return [data[0] for data in result.items() if data[1] == len(arrays)]
 
 
 if __name__ == "__main__":
